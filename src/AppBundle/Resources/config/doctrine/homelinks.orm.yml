@@ -1,0 +1,42 @@
+AppBundle\Entity\homelinks:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\homelinksRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            length: 255
+        title:
+            type: string
+            length: 255
+        icon:
+            type: string
+            length: 255
+            nullable: true
+        iconColor:
+            type: string
+            length: 255
+            nullable: true
+        link:
+            type: string
+            length: 255
+            nullable: true
+        backgroundImageUrl:
+            type: string
+            length: 255
+            nullable: true
+            column: background_image_url
+        content:
+            type: text
+            nullable: true
+        text:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks: {  }

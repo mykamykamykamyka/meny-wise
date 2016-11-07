@@ -1,0 +1,26 @@
+<section class="page-header page-header-lg parallax parallax-4" style="background-image: url('{{asset('images/bigbold_1.jpg')}}'); background-position: 50% 0px;">
+	<div class="overlay dark-2"><!-- dark overlay [1 to 9 opacity] --></div>
+
+	<div class="container">
+
+		<h1><strong>Notre mission :</strong></h1>
+		<span class="font-lato size-18 weight-300">Faciliter le quotidien des professionnels de santé libéraux ...</span>
+		<br><span class="font-lato size-18 weight-300">Simplifier la mise en relation ...</span>
+
+		<br><br><br>
+		<span>
+			<ul class="list-inline">
+			{% for lien in liens %}
+		    	<li class="text-center">
+		    	<a href="{{lien.link}}">
+		    		<h1 class="hidden-xs"><i class="ico-light ico-lg ico-rounded ico-hover {{lien.icon}} text-{{lien.iconColor}}"></i><br>{{lien.title}}</h1>
+		    		<span class="visible-xs"><i class="ico-light ico-lg ico-rounded ico-hover {{lien.icon}} text-{{lien.iconColor}}"></i><br>{{lien.title}}</span>
+		    	</a>
+		    	</li>
+			{% endfor %}
+			</ul>
+		</span>
+		
+		
+	</div>
+</section>

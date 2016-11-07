@@ -1,0 +1,30 @@
+<section>
+	<div class="container">
+		<!-- FEATURED BOXES 3 -->
+		<div class="row">
+		{% for item in serviceEmploi %}
+		    <div class="col-md-3 col-xs-6">
+				<div class="text-center">
+					<i class="ico-light ico-lg ico-rounded ico-hover {{item.icon}}"></i>
+					<h4>{{item.title}}</h4>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus.</p>
+
+					<a href="{{item.link}}">
+						<!-- /word rotator -->
+						<span class="word-rotator active" data-delay="2000" style="height: 21px;">
+							<span class="items" style="top: -21px;">
+								<span>Read more</span>
+								<span>Plus d'info</span>
+							</span>
+						</span><!-- /word rotator -->
+						<i class="glyphicon glyphicon-menu-right size-12"></i>
+					</a>
+
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+		<!-- /FEATURED BOXES 3 -->
+
+	</div>
+</section>

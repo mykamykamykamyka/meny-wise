@@ -1,0 +1,47 @@
+<section id="slider" class="height-350">
+
+  <!--
+    SWIPPER SLIDER PARAMS
+    
+    data-effect="slide|fade|coverflow"
+    data-autoplay="4000|false" / 4000 = 4000ms (4s)
+    data-speed="1000" (fade transition duration in ms)
+  -->
+  <div class="swiper-container" data-speed="1000" data-effect="slide" data-autoplay="3000">
+    <div class="swiper-wrapper">
+    {% for slide in slides %}
+        <div class="swiper-slide" style="background-image: url('{{asset(slide.backgroundImageUrl)}}');">
+        <div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+        
+        <div class="display-table">
+          <div class="display-table-cell vertical-align-middle">
+            <div class="container">
+
+              <div class="row">
+                <div class="text-center col-md-8 col-xs-12 col-md-offset-2">
+
+                  <h1 class="bold font-raleway wow fadeInUp" data-wow-delay="0.4s">{{slide.title}}</h1>
+                  <p class="lead font-lato weight-300 hidden-xs wow fadeInUp" data-wow-delay="0.6s">{{slide.content}}</p>
+                  <!-- <a class="btn btn-default btn-lg wow fadeIn" data-wow-delay="1.5s" href="#">...</a> -->
+
+                </div>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    {% endfor %}
+    </div>
+
+    <!-- Swiper Pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Swiper Arrows -->
+    <div class="swiper-button-next"><i class="icon-angle-right"></i></div>
+    <div class="swiper-button-prev"><i class="icon-angle-left"></i></div>
+  </div>
+    
+</section>
+<!-- /SLIDER -->

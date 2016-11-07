@@ -1,0 +1,25 @@
+<section class="parallax parallax-2" style="background-image: url({{asset('assets/images/demo/wall3-min.jpg')}}); background-position: 50% 126px;">
+	<div class="overlay dark-6"><!-- dark overlay [1 to 9 opacity] --></div>
+
+	<div class="container">
+
+		<div class="text-center">
+			<h3 class="nomargin">Retrouvez-nous sur les réseaux sociaux</h3>
+			<p class="font-lato weight-300 lead nomargin-top">Selon vous, ceci plairait-il à vos ami(e)s?</p>
+		</div>
+
+		<ul class="margin-top-5 social-icons list-unstyled list-inline">
+			{% for item in socialNetwork %}
+			    <li>
+			    	<a target="_blank" href="{{item.link}}">
+			    		<i class="{{item.icon}} text-{{item.iconColor}}"></i>
+			    		<h4>{{item.title|upper}}</h4>
+			    		<span>{{item.text}}</span>
+			    	</a>
+			    </li>
+			{% endfor %}
+		</ul>
+
+	</div>
+
+</section>

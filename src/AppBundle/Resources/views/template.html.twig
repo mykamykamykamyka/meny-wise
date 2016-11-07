@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+{% block head %}
+	<head>
+		<meta charset="utf-8" />
+		<title>{{title is defined ? title : 'home'}} | meny-wise</title>
+		<meta name="keywords" content="HTML5,CSS3,Template" />
+		<meta name="description" content="" />
+		<meta name="Author" content="mykamykamykamyka" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- WEB FONTS : use %7C instead of | (pipe) -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+
+		<!-- REVOLUTION SLIDER -->
+		<link href="{{asset('assets/plugins/slider.revolution/css/extralayers.css')}}" rel="stylesheet" type="text/css" />
+		<link href="{{asset('assets/plugins/slider.revolution/css/settings.css')}}" rel="stylesheet" type="text/css" />
+
+		<!-- THEME CSS -->
+		<link href="{{asset('assets/css/essentials.css')}}" rel="stylesheet" type="text/css" />
+		<link href="{{asset('assets/css/layout.css')}}" rel="stylesheet" type="text/css" />	
+		{# <link href="{{asset('assets/css/layout-dark.css')}}" rel="stylesheet" type="text/css" /> #}
+
+		<!-- PAGE LEVEL SCRIPTS -->
+		<link href="{{asset('assets/css/header-1.css')}}" rel="stylesheet" type="text/css" />
+		<link href="{{asset('assets/css/color_scheme/blue.css')}}" rel="stylesheet" type="text/css" id="color_scheme" />
+
+		<!-- RS5.0 Main Stylesheet -->
+		<link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/slider.swiper/dist/css/swiper.min.css')}}">
+
+		<style type="text/css">
+			#header a.logo>img {
+			    height: 48px;
+			    -webkit-transition: all .300s;
+			    -moz-transition: all .300s;
+			    -o-transition: all .300s;
+			    transition: all .300s;
+			}
+			#header.fixed #topNav a.logo>img {
+			    height: 45px;
+			    margin: 7px;
+			}
+		</style>
+		 
+		<!-- RS5.0 Core JS Files -->
+		<script type="text/javascript" src="{{asset('js/jquery/dist/jquery.js')}}"></script>
+		<script type="text/javascript" src="{{asset('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('assets/plugins/slider.swiper/dist/js/swiper.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('assets/js/view/demo.swiper_slider.js')}}"></script>
+	</head>
+{% endblock %}
+<body class="smoothscroll enable-animation" ng-app="mykaApp">
+	{% include 'AppBundle::slideTop.html.twig'%}
+
+	<div id="wrapper">
+		{% include 'AppBundle::topBar.html.twig' %}
+		{% include 'AppBundle::header.html.twig' %}
+{% block fos_user_content %}
+    
+{% endblock %}
+{% block body %}
+
+{% endblock %}
+
+		{% include 'AppBundle::footer.html.twig' %}
+
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
+
+
+		<!-- PRELOADER -->
+		<div id="preloader">
+			<div class="inner">
+				<span class="loader"></span>
+			</div>
+		</div><!-- /PRELOADER -->
+	</div>
+</body>
+
+{% block script %}
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    <script type="text/javascript" src="{{asset('js/angular/angular.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/angular/angular-route.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/script/mykaApp.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/script/routes.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/script/controllers/homeController.js')}}"></script>
+
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript">var plugin_path = 'assets/plugins/';</script>
+    <script type="text/javascript" src="{{asset('assets/plugins/jquery/jquery-2.2.3.min.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('assets/js/scripts.js')}}"></script>
+    
+    <!-- STYLESWITCHER - REMOVE -->
+    <script async type="text/javascript" src="{{asset('assets/plugins/styleswitcher/styleswitcher.js')}}"></script>
+
+    <!-- REVOLUTION SLIDER -->
+    <script type="text/javascript" src="{{asset('assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/view/demo.revolution_slider.js')}}"></script>
+
+    <!-- PAGELEVEL SCRIPTS -->
+    <script type="text/javascript" src="{{asset('assets/js/contact.js')}}"></script>
+
+    <!-- 
+    	GMAP.JS 
+    	http://hpneo.github.io/gmaps/
+    -->
+    <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="{{asset('assets/plugins/gmaps.js')}}"></script>
+    <script type="text/javascript">
+
+    	jQuery(document).ready(function(){
+
+    		/**
+    			@BASIC GOOGLE MAP
+    		**/
+    		var map2 = new GMaps({
+    			div: '#map2',
+    			lat: -12.043333,
+    			lng: -77.028333,
+    			scrollwheel: false
+    		});
+
+    		var marker = map2.addMarker({
+    			lat: -12.043333,
+    			lng: -77.028333,
+    			title: 'Company, Inc.'
+    		});
+
+    	});
+
+    </script>
+{% endblock %}
+</html>
